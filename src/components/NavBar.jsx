@@ -4,7 +4,6 @@ import styles from "../styles/NavBar.module.css"
 
 export default function NavBar() {
     const location = useLocation()
-    console.log(location)
 
     return (
         <header className={styles.navHeader}>
