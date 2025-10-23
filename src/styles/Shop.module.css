@@ -22,3 +22,14 @@
     line-height: 1.6;
     color: var(--text-color)
 }
+
+.products {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.products img {
+    width: 100px;
+}

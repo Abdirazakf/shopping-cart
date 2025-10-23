@@ -3,7 +3,6 @@ import styles from "../styles/Shop.module.css"
 
 export default function Shop() {
     const products = useLoaderData()
-    console.log(products)
 
     return(
         <main className={styles.container}>
@@ -13,7 +12,7 @@ export default function Shop() {
                     <div key={product.id}>
                         <img src={product.image} alt={product.title} />
                         <h3>{product.title}</h3>
-                        <p>{product.price}</p>
+                        <p>${product.price}</p>
                     </div>
                 ))}
             </div>
