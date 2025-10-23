@@ -1,7 +1,7 @@
 .navHeader {
     height: 70px;
     padding: 5px 20px 0px 20px;
-    background-color: #494d56;
+    background-color: var(--secondary-color);
     color: white;
     display: flex;
     align-items: center;
