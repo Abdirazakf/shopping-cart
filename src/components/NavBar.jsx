@@ -1,11 +1,13 @@
 import { Link } from "react-router"
+import cartLogo from '../assets/cart.svg'
+import styles from "../styles/NavBar.module.css"
 
 export default function NavBar() {
     return (
-        <header>
-            <img src="../assets/cart.svg" alt="Page Logo" />
+        <header className={styles.navHeader}>
+            <img src={cartLogo} alt="Page Logo" />
             <h1>ShopMart</h1>
-            <div className="link-container">
+            <div className={styles.linkContainer}>
                 <Link to="/">
                     <button>Home</button>
                 </Link>

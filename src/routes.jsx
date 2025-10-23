@@ -6,15 +6,17 @@ import Cart from './components/Cart'
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <App />
-    },
-    {
-        path: 'shop',
-        element: <Shop />
-    },
-    {
-        path: 'cart',
-        element: <Cart />
+        element: <App />,
+        children: [
+            {
+                path: "shop",
+                element: <Shop />
+            },
+            {
+                path: "cart",
+                element: <Cart />
+            }
+        ]
     }
 ])
 
