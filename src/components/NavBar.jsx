@@ -1,8 +1,11 @@
 import { Link } from "react-router"
+import { useState } from "react"
 import cartLogo from '../assets/cart.svg'
 import styles from "../styles/NavBar.module.css"
 
 export default function NavBar() {
+    const [activePage, setActivePage] = useState(null)
+    
     return (
         <header className={styles.navHeader}>
             <img src={cartLogo} alt="Page Logo" />
