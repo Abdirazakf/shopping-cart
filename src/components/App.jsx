@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import styles from '../styles/App.module.css'
+import NavBar from "./NavBar";
 
 export default function App() {
-    
+    return (
+        <NavBar />
+    )
 }
