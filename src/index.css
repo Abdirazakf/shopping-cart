@@ -24,6 +24,6 @@ h1 {
 }
 
 main {
-    background-color: #e3e4e9;
+    background-color: var(--main-color);
     flex: 1;
 }
