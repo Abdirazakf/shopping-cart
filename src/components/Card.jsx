@@ -17,11 +17,11 @@ const Card = ({id, title, price, image}) => {
 
 const StyledWrapper = styled.div`
     width: 100%;
-    
+
     .card {
         width: 100%;
         border-radius: 20px;
-        background-color: #5f5f5;
+        background-color: #f5f5f5;
         height: 300px;
         position: relative;
         padding: 1.5rem;
