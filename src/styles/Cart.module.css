@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    min-height: calc(100vh - 68px);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.container > h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: var(--heading-color);
+}
+
+.container > p {
+    margin: 0;
+    font-size: 1.125rem;
+    max-width: 600px;
+    line-height: 1.6;
+    color: var(--text-color)
+}

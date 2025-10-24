@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router"
 import styles from "../styles/Shop.module.css"
+import Card from "./Card"
 
 export default function Shop() {
     const products = useLoaderData()
@@ -9,11 +10,7 @@ export default function Shop() {
             <h1>OUR PRODUCTS</h1>
             <div className={styles.products}>
                 {products.map(product => (
-                    <div key={product.id}>
-                        <img src={product.image} alt={product.title} />
-                        <h3>{product.title}</h3>
-                        <p>${product.price}</p>
-                    </div>
+                    <Card id={product.id} title={product.title} price={product.price} image={product.image}/>
                 ))}
             </div>
         </main>
