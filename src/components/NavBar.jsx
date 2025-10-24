@@ -11,17 +11,17 @@ export default function NavBar() {
             <h1>ShopMart</h1>
             <div className={styles.linkContainer}>
                 <Link to="/">
-                    <button className= {location.pathname === "/" ? styles.active : ""}>
+                    <button className= {location.pathname === "/" ? `${styles.active} ${styles.btn}` : styles.btn}>
                         Home
                     </button>
                 </Link>
                 <Link to="shop">
-                    <button className= {location.pathname === "/shop" ? styles.active : ""}>
+                    <button className= {location.pathname === "/shop" ? `${styles.active} ${styles.btn}`: styles.btn}>
                         Shop
                     </button>
                 </Link>
                 <Link to="cart">
-                    <button className= {location.pathname === "/cart" ? styles.active : ""}>
+                    <button className= {location.pathname === "/cart" ? `${styles.active} ${styles.btn}`: styles.btn}>
                         Cart
                     </button>
                 </Link>
