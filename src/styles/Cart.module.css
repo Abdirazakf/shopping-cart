@@ -111,7 +111,8 @@
     margin: 0;
 }
 
-.checkoutButton {
+.checkoutButton,
+.clearButton {
     margin-top: 10px;
     color: white;
     background-color: #4b4f58;
@@ -122,4 +123,8 @@
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
+}
+
+.clearButton {
+    background-color: rgb(133, 27, 27);
 }

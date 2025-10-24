@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router"
 import styles from "../styles/Cart.module.css"
 
 export default function Cart() {
-    const { cart, removeItem, cartSummary } = useOutletContext()
+    const { cart, removeItem, clearCart, cartSummary } = useOutletContext()
 
     if (cart.length === 0) {
         return (
@@ -44,6 +44,7 @@ export default function Cart() {
                 <h2>Shipping: {cartSummary.shipping > 0 ? `$${cartSummary.shipping}.00` : 'FREE'}</h2>
                 <h2>Order Total: ${cartSummary.grandtotal}</h2>
                 <button className={styles.checkoutButton}>PROCEED TO CHECKOUT</button>
+                <button className={styles.clearButton} onClick={clearCart}>Clear Cart</button>
             </div>
         </main>
     )

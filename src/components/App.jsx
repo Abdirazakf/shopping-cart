@@ -48,6 +48,10 @@ export default function App() {
         setCart([])
     }
 
+    function getTotalItems() {
+        return cart.reduce((total, item) => total + item.quantity, 0)
+    }
+
     const cartSummary = useMemo(() => {
         const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0)
         const shipping = subtotal >= 50 ? 0 : 5
@@ -58,13 +62,14 @@ export default function App() {
 
     return (
         <div className="container">
-            <NavBar />
+            <NavBar itemTotal={getTotalItems()}/>
             <Outlet context={{
                 cart,
                 addToCart,
                 removeItem,
                 clearCart,
                 updateQuantity,
+                getTotalItems,
                 cartSummary
             }}/>
         </div>
