@@ -1,9 +1,10 @@
-import { useLoaderData } from "react-router"
+import { useLoaderData, useOutletContext } from "react-router"
 import styles from "../styles/Shop.module.css"
 import Card from "./Card"
 
 export default function Shop() {
     const products = useLoaderData()
+    const { addToCart } = useOutletContext()
 
     return(
         <main className={styles.container}>
@@ -11,10 +12,13 @@ export default function Shop() {
             <div className={styles.products}>
                 {products.map(product => (
                 <Card 
-                    key={product.id} 
+                    key={product.id}
+                    id={product.id} 
                     title={product.title} 
                     price={product.price} 
-                    image={product.image}/>
+                    image={product.image}
+                    addToCart={addToCart}
+                />
                 ))}
             </div>
         </main>

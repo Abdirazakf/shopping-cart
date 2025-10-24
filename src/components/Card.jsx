@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const Card = ({title, price, image}) => {
+const Card = ({id, title, price, image, addToCart}) => {
+    function handleClick() {
+        addToCart({id, title, price, image})
+    }
+
     return (
         <StyledWrapper>
             <div className="card">
@@ -9,7 +13,7 @@ const Card = ({title, price, image}) => {
                     <p className="text-title">{title}</p>
                     <p className="text-body">${price}</p>
                 </div>
-                <button className="card-button">Add to Cart</button>
+                <button className="card-button" onClick={handleClick}>Add to Cart</button>
             </div>
         </StyledWrapper>
     );
