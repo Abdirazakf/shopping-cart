@@ -22,3 +22,58 @@
     line-height: 1.6;
     color: var(--text-color)
 }
+
+.cartContainer {
+    display: grid;
+    grid-template-columns: 2fr, repeat(3, 1fr)
+}
+
+.itemContainer {
+    grid-column: 1 / -1;
+    background-color: white;
+}
+
+.itemHeader,
+.quantityHeader,
+.priceHeader,
+.totalHeader {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+.items,
+.quantities,
+.prices,
+.totals {
+    padding: 20px 15px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemHeader,
+.items {
+    grid-column: 1;
+}
+
+.quantityHeader,
+.quantities {
+    grid-column: 2 / 3;
+}
+
+.priceHeader,
+.prices {
+    grid-column: 3;
+}
+
+.totalHeader,
+.totals {
+    grid-column: 4;
+}
