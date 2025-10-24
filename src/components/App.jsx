@@ -34,6 +34,19 @@ export default function App() {
     function removeItem(productId) {
         setCart(prevCart => prevCart.filter(item => item.id !== productId))
     }
+    
+    function updateQuantity(productId, quantity) {
+        if (quantity <= 0) {
+            removeItem(productId)
+            return
+        }
+
+        setCart(prevCart => prevCart.map(item => item.id === productId ? {...item, quantity } : item))
+    }
+
+    function clearCart() {
+        setCart([])
+    }
 
     const cartSummary = useMemo(() => {
         const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0)
@@ -50,6 +63,8 @@ export default function App() {
                 cart,
                 addToCart,
                 removeItem,
+                clearCart,
+                updateQuantity,
                 cartSummary
             }}/>
         </div>
