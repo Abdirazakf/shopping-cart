@@ -8,6 +8,16 @@
     gap: 10px;
 }
 
+.navHeader > img {
+    width: 48px;
+    height: 48px;
+}
+
+.navHeader > h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
 .linkContainer {
     width: auto;
     height: 100%;
@@ -25,8 +35,92 @@ button {
     padding: 0 20px;
     height: 100%;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .active {
     border-bottom: 4px solid white;
+}
+
+/* Tablet design */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .navHeader {
+        padding: 5px 15px 0px 15px;
+        gap: 8px;
+    }
+
+    .navHeader > img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .navHeader > h1 {
+        font-size: 1.6rem;
+    }
+
+    button {
+        font-size: 1.3rem;
+        padding: 0 15px;
+    }
+
+    .linkContainer {
+        gap: 12px;
+    }
+}
+
+/* Mobile design */
+@media (max-width: 768px) {
+    .navHeader {
+        height: 60px;
+        padding: 5px 10px 0px 10px;
+        gap: 6px;
+    }
+
+    .navHeader > img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .navHeader > h1 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+        padding: 0 12px;
+    }
+
+    .linkContainer {
+        gap: 8px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .navHeader {
+        padding: 5px 8px 0px 8px;
+        gap: 5px;
+    }
+
+    .navHeader > img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .navHeader > h1 {
+        font-size: 1.1rem;
+    }
+
+    button {
+        font-size: 0.95rem;
+        padding: 0 8px;
+    }
+
+    .linkContainer {
+        gap: 5px;
+    }
 }
