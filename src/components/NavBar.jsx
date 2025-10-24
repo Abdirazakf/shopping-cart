@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router"
 import cartLogo from '../assets/cart.svg'
 import styles from "../styles/NavBar.module.css"
 
-export default function NavBar() {
+export default function NavBar({itemTotal}) {
     const location = useLocation()
 
     return (
@@ -23,6 +23,9 @@ export default function NavBar() {
                 <Link to="cart">
                     <button className= {location.pathname === "/cart" ? `${styles.active} ${styles.btn}`: styles.btn}>
                         Cart
+                        {itemTotal > 0 && (
+                            <span className={styles.cartBadge}>{itemTotal}</span>
+                        )}
                     </button>
                 </Link>
             </div>

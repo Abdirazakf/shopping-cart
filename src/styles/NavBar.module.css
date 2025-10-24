@@ -26,6 +26,11 @@
     gap: 15px;
 }
 
+.cartLink {
+    position: relative;
+    height: 100%;
+}
+
 .btn {
     font-size: 1.4rem;
     font-weight: 600;
@@ -36,6 +41,7 @@
     height: 100%;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .btn:hover {
@@ -44,6 +50,24 @@
 
 .active {
     border-bottom: 4px solid white;
+}
+
+.cartBadge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #ff4444;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Tablet design */
@@ -69,6 +93,14 @@
 
     .linkContainer {
         gap: 12px;
+    }
+
+    .cartBadge {
+        top: 3px;
+        right: -3px;
+        font-size: 0.7rem;
+        min-width: 18px;
+        height: 18px;
     }
 }
 
@@ -97,6 +129,14 @@
     .linkContainer {
         gap: 8px;
     }
+
+    .cartBadge {
+        top: 5px;
+        right: -5px;
+        font-size: 0.65rem;
+        min-width: 16px;
+        height: 16px;
+    }
 }
 
 /* Small mobile devices */
@@ -122,5 +162,13 @@
 
     .linkContainer {
         gap: 5px;
+    }
+
+    .cartBadge {
+        top: 4px;
+        right: 0px;
+        font-size: 0.6rem;
+        min-width: 15px;
+        height: 15px;
     }
 }
