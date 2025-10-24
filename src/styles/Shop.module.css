@@ -35,7 +35,7 @@
 }
 
 /* Tablet design */
-@media (max-width: 1050px) and (min-width: 769px) {
+@media (max-width: 1024px) and (min-width: 769px) {
     .container {
         padding: 30px 15px;
     }
@@ -76,7 +76,7 @@
 }
 
 /* Small mobile devices */
-@media (max-width: 660px) {
+@media (max-width: 480px) {
     .products {
         grid-template-columns: 1fr;
         align-items: center;
