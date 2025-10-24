@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router"
 import styles from "../styles/Cart.module.css"
 
 export default function Cart() {
-    const { cart, removeItem } = useOutletContext()
+    const { cart, removeItem, cartSummary } = useOutletContext()
 
     if (cart.length === 0) {
         return (
@@ -24,19 +24,26 @@ export default function Cart() {
                 {cart.map(item => (
                     <>
                         <div key={`title-${item.id}`} className={styles.items}>
+                            <img src={item.image}/>
                             <h4>{item.title}</h4>
                         </div>
                         <div key={`quantity-${item.id}`} className={styles.quantities}>
                             <h4>{item.quantity}</h4>
                         </div>
                         <div key={`price-${item.id}`} className={styles.prices}>
-                            {item.price.toFixed(2)}
+                            ${item.price}
                         </div>
                         <div key={`total-${item.id}`} className={styles.totals}>
-                            {(item.price * item.quantity).toFixed(2)}
+                            ${(item.price * item.quantity).toFixed(2)}
                         </div>
                     </>
                 ))}
+            </div>
+            <div className={styles.cartSummary}>
+                <h2>Subtotal: ${cartSummary.subtotal}</h2>
+                <h2>Shipping: {cartSummary.shipping > 0 ? `$${cartSummary.shipping}.00` : 'FREE'}</h2>
+                <h2>Order Total: ${cartSummary.grandtotal}</h2>
+                <button className={styles.checkoutButton}>PROCEED TO CHECKOUT</button>
             </div>
         </main>
     )

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import NavBar from "./NavBar";
 
 export default function App() {
@@ -35,6 +35,13 @@ export default function App() {
         setCart(prevCart => prevCart.filter(item => item.id !== productId))
     }
 
+    const cartSummary = useMemo(() => {
+        const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0)
+        const shipping = subtotal >= 50 ? 0 : 5
+        const grandtotal = parseFloat(subtotal) + parseFloat(shipping)
+
+        return {subtotal, shipping, grandtotal}
+    }, [cart])
 
     return (
         <div className="container">
@@ -42,7 +49,8 @@ export default function App() {
             <Outlet context={{
                 cart,
                 addToCart,
-                removeItem
+                removeItem,
+                cartSummary
             }}/>
         </div>
     )

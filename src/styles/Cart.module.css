@@ -28,6 +28,11 @@
     grid-template-columns: 2fr, repeat(3, 1fr)
 }
 
+.cartContainer,
+.cartSummary {
+    width: 100%;
+}
+
 .itemContainer {
     grid-column: 1 / -1;
     background-color: white;
@@ -63,9 +68,26 @@
     grid-column: 1;
 }
 
+.items {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.items img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.items h4 {
+    text-align: left;
+}
+
 .quantityHeader,
 .quantities {
-    grid-column: 2 / 3;
+    grid-column: 2;
 }
 
 .priceHeader,
@@ -76,4 +98,31 @@
 .totalHeader,
 .totals {
     grid-column: 4;
+}
+
+.cartSummary{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.cartSummary > * {
+    margin: 0;
+}
+
+.checkoutButton {
+    margin-top: 10px;
+    background-color: #4b4f58;
+    color: white;
+}
+
+.checkoutButton {
+    padding: 12px 30px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
 }
