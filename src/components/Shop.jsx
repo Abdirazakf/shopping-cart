@@ -10,7 +10,11 @@ export default function Shop() {
             <h1>OUR PRODUCTS</h1>
             <div className={styles.products}>
                 {products.map(product => (
-                    <Card id={product.id} title={product.title} price={product.price} image={product.image}/>
+                <Card 
+                    key={product.id} 
+                    title={product.title} 
+                    price={product.price} 
+                    image={product.image}/>
                 ))}
             </div>
         </main>

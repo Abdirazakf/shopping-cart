@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const Card = ({id, title, price, image}) => {
+const Card = ({title, price, image}) => {
     return (
         <StyledWrapper>
-            <div className="card" key={id}>
+            <div className="card">
                 <div className="card-details">
                     <img src={image} alt={title} />
                     <p className="text-title">{title}</p>
