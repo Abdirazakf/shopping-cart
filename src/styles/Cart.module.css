@@ -113,11 +113,8 @@
 
 .checkoutButton {
     margin-top: 10px;
-    background-color: #4b4f58;
     color: white;
-}
-
-.checkoutButton {
+    background-color: #4b4f58;
     padding: 12px 30px;
     color: white;
     border: none;
