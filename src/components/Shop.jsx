@@ -15,7 +15,7 @@ export default function Shop() {
                     key={product.id}
                     id={product.id} 
                     title={product.title} 
-                    price={product.price} 
+                    price={product.price.toFixed(2)} 
                     image={product.image}
                     addToCart={addToCart}
                 />
