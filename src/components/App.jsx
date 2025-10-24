@@ -31,13 +31,18 @@ export default function App() {
         })
     }
 
+    function removeItem(productId) {
+        setCart(prevCart => prevCart.filter(item => item.id !== productId))
+    }
+
 
     return (
         <div className="container">
             <NavBar />
             <Outlet context={{
                 cart,
-                addToCart
+                addToCart,
+                removeItem
             }}/>
         </div>
     )
