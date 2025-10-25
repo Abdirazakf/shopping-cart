@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router"
 import styles from "../styles/Cart.module.css"
+import close from "../assets/close.svg"
 
 export default function Cart() {
     const { cart, removeItem, clearCart, updateQuantity, cartSummary } = useOutletContext()
@@ -28,6 +29,7 @@ export default function Cart() {
                 <h3 className={styles.quantityHeader}>Quantity</h3>
                 <h3 className={styles.priceHeader}>Price</h3>
                 <h3 className={styles.totalHeader}>Total</h3>
+                <h3 className={styles.removeHeader}></h3>
                 {cart.map(item => (
                     <>
                         <div key={`title-${item.id}`} className={styles.items}>
@@ -44,6 +46,14 @@ export default function Cart() {
                         </div>
                         <div key={`total-${item.id}`} className={styles.totals}>
                             ${(item.price * item.quantity).toFixed(2)}
+                        </div>
+                        <div className={styles.removeContainer}>
+                            <button className={styles.removeBtn} onClick={() => removeItem(item.id)}>
+                                <span className={styles.text}>Delete</span>
+                                <span className={styles.icon}>
+                                    <img src={close} alt="Close" />
+                                </span>
+                            </button>
                         </div>
                     </>
                 ))}
