@@ -8,6 +8,32 @@ export default function App() {
         return savedCart ? JSON.parse(savedCart) : []
     })
 
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        async function fetchProducts() {
+            try {
+                const response = await fetch('https://fakestoreapi.com/products')
+                
+                if (response.status >= 400) {
+                    throw new Error("Network Error: Could not fetch data")
+                }
+                
+                const data = await response.json()            
+                setProducts(data)
+
+            } catch (err) {
+                setError(err.message)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchProducts()
+    }, [])
+
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
@@ -64,6 +90,9 @@ export default function App() {
             <NavBar itemTotal={getTotalItems()}/>
             <Outlet context={{
                 cart,
+                products,
+                loading,
+                error,
                 addToCart,
                 removeItem,
                 clearCart,

@@ -1,11 +1,25 @@
-import { useLoaderData, useOutletContext } from "react-router"
+import { useOutletContext } from "react-router"
 import styles from "../styles/Shop.module.css"
 import Card from "./Card"
+import { OrbitProgress } from "react-loading-indicators"
 
 export default function Shop() {
-    const products = useLoaderData()
-    const { addToCart } = useOutletContext()
+    const { products, loading, error, addToCart } = useOutletContext()
 
+    if (loading) {
+        <main className={styles.container}>
+            <h1>OUR PRODUCTS</h1>
+            <OrbitProgress color="#484c55" size="large" /> 
+        </main>
+    }
+    
+    if (error) {
+        <main className={styles.container}>
+            <h1>OUR PRODUCTS</h1>
+            <p>Error loading products: {error}</p>
+        </main>
+    }
+    
     return(
         <main className={styles.container}>
             <h1>OUR PRODUCTS</h1>

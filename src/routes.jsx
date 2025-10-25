@@ -5,31 +5,6 @@ import Shop from './components/Shop'
 import Cart from './components/Cart'
 import ErrorPage from "./components/ErrorPage";
 
-let cachedProducts = null
-
-async function fetchProducts() {
-
-    if (cachedProducts) {
-        return cachedProducts
-    }
-
-    try {
-        const response = await fetch('https://fakestoreapi.com/products')
-
-        if (response.status >= 400) {
-            throw new Error("Network Error: Could not fetch data")
-        }
-
-        const data = await response.json()
-        cachedProducts = data
-
-        return data
-        
-    } catch (err) {
-        throw new Error(err)
-    }
-}
-
 const router = createBrowserRouter([
     {
         path: '/',
@@ -42,9 +17,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "shop",
-                element: <Shop />,
-                loader: fetchProducts,
-                shouldRevalidate: () => false
+                element: <Shop />
             },
             {
                 path: "cart",
