@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router"
 import styles from "../styles/Cart.module.css"
 
 export default function Cart() {
-    const { cart, removeItem, clearCart, cartSummary } = useOutletContext()
+    const { cart, removeItem, clearCart, updateQuantity, cartSummary } = useOutletContext()
 
     if (cart.length === 0) {
         return (
@@ -11,6 +11,13 @@ export default function Cart() {
                 <p className={styles.empty}>Your cart is empty. Start shopping!</p>
             </main>
         )
+    }
+    
+    const handleQuantityChange = (id, newQuantity) => {
+        const quantity = parseInt(newQuantity)
+        if (quantity && quantity >= 0) {
+            updateQuantity(id, quantity)
+        }
     }
 
     return(
@@ -28,7 +35,9 @@ export default function Cart() {
                             <h4>{item.title}</h4>
                         </div>
                         <div key={`quantity-${item.id}`} className={styles.quantities}>
-                            <h4>{item.quantity}</h4>
+                            <div className={styles.decrementBtn} onClick={() => updateQuantity(item.id, item.quantity - 1)}></div>
+                            <input type="number" value={item.quantity} className={styles.quantityNum}  onChange={(event) => handleQuantityChange(item.id, event.target.value)}/>
+                            <div className={styles.incrementBtn} onClick={() => updateQuantity(item.id, item.quantity + 1)}></div>
                         </div>
                         <div key={`price-${item.id}`} className={styles.prices}>
                             ${item.price}

@@ -10,7 +10,6 @@ export default function App() {
 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
-        console.log(cart)
     }, [cart])
 
     function addToCart(product) {
@@ -53,9 +52,9 @@ export default function App() {
     }
 
     const cartSummary = useMemo(() => {
-        const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0)
+        const subtotal = (cart.reduce((total, item) => total + (item.price * item.quantity), 0)).toFixed(2)
         const shipping = subtotal >= 50 ? 0 : 5
-        const grandtotal = parseFloat(subtotal) + parseFloat(shipping)
+        const grandtotal = (parseFloat(subtotal) + parseFloat(shipping)).toFixed(2)
 
         return {subtotal, shipping, grandtotal}
     }, [cart])

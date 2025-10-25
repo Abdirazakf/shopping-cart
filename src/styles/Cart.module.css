@@ -90,6 +90,11 @@
     grid-column: 2;
 }
 
+.quantities {
+    display: flex;
+    align-items: center;
+}
+
 .priceHeader,
 .prices {
     grid-column: 3;
@@ -124,6 +129,43 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+.decrementBtn::before,
+.incrementBtn::after {
+  content: attr(data-content);
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  width: 20px;
+  color: white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.decrementBtn::before {
+  content: "-";
+}
+
+.incrementBtn::after {
+  content: "+";
+}
+
+.quantityNum {
+  padding: 0.25rem;
+  border: 0;
+  width: 50px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: right;
+}
+
+.decrementBtn:hover::before,
+.incrementBtn:hover::after {
+  background-color: #666666;
+}
+
 
 .clearButton {
     background-color: rgb(133, 27, 27);
