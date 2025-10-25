@@ -39,7 +39,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Abdirazakf/shopping-cart
 cd shopping-cart
 ```
 
@@ -150,3 +150,4 @@ This project is open source and available under the MIT License.
 - Product data provided by [Fake Store API](https://fakestoreapi.com/)
 - Icons from Google Material Symbols
 - Loading indicator from react-loading-indicators
+
