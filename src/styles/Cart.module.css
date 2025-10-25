@@ -178,8 +178,8 @@
 }
 
 .removeBtn {
-    width: 180px;
-    height: 50px;
+    width: 150px;
+    height: 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -196,15 +196,14 @@
 }
 
 .text {
-    transform: translateX(35px);
+    transform: translateX(30px);
     color: white;
     font-weight: bold;
 }
 
 .icon {
     position: absolute;
-    border-left: 1px solid #c41b1b;
-    transform: translateX(110px);
+    transform: translateX(90px);
     height: 40px;
     width: 40px;
     display: flex;
@@ -222,7 +221,6 @@
 
 .removeBtn:hover .icon {
     width: 150px;
-    border-left: none;
     transform: translateX(0);
 }
 
