@@ -10,7 +10,6 @@ let cachedProducts = null
 async function fetchProducts() {
 
     if (cachedProducts) {
-        console.log('Returning Cached products')
         return cachedProducts
     }
 
