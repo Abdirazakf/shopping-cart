@@ -7,17 +7,21 @@ export default function Shop() {
     const { products, loading, error, addToCart } = useOutletContext()
 
     if (loading) {
-        <main className={styles.container}>
-            <h1>OUR PRODUCTS</h1>
-            <OrbitProgress color="#484c55" size="large" /> 
-        </main>
+        return (
+            <main className={styles.container}>
+                <h1>OUR PRODUCTS</h1>
+                <OrbitProgress color="#484c55" size="large" /> 
+            </main>
+        )
     }
     
     if (error) {
-        <main className={styles.container}>
-            <h1>OUR PRODUCTS</h1>
-            <p>Error loading products: {error}</p>
-        </main>
+        return (
+            <main className={styles.container}>
+                <h1>OUR PRODUCTS</h1>
+                <p>Error loading products: {error}</p>
+            </main>
+        )
     }
     
     return(
